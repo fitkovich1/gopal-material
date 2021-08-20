@@ -1,106 +1,63 @@
 import { useState } from "react";
-import { Button, DatePicker, Popover, Select } from "antd";
-import { CalendarOutlined, InfoCircleOutlined } from '@ant-design/icons';
-import selectIcon from '../../assets/img/arrows-icon.png';
+import { Box, Button } from "@material-ui/core";
+import { KeyboardDatePicker } from "@material-ui/pickers";
+import CustomSelect from "../CustomSelect";
+import CustomPopover from "../CustomPopover";
 import './style.css';
-
-
-const { Option } = Select;
 
 
 const GoodFaithPayment = () => {
 
-  const [isPickerOpen, setIsPickerOpen] = useState(false);
+  const [selectedDate, handleDateChange] = useState(new Date());
 
-
-  return <div className='GoodFaithPayment'>
-    <p>Choose your Good Faith Payment Date</p>
-    <div className='GoodFaithPayment-date'>
-      <div className='GoodFaithPayment-date-container'>
-        <CalendarOutlined
-          className='GoodFaithPayment-date-container-calendar'
-          onClick={ () => setIsPickerOpen(!isPickerOpen) }
-        />
-        <DatePicker
+  return <Box className='GoodFaithPayment'>
+    <Box component="p" color='textPrimary'>Choose your Good Faith Payment Date</Box>
+    <Box className='GoodFaithPayment-date'>
+      <Box className='GoodFaithPayment-date-container'>
+        <KeyboardDatePicker
           className='GoodFaithPayment-date-picker'
-          placeholder={ 'MM/DD/YYYY' }
-          size={ 'middle' }
-          open={ isPickerOpen }
-          allowClear={ true }
-          onFocus={ () => setIsPickerOpen(true) }
-          onBlur={ () => setIsPickerOpen(false) }
-          onChange={ () => setIsPickerOpen(false) }
+          autoOk
+          disableFuture
+          variant="inline"
+          format="dd/MM/yyyy"
+          value={selectedDate}
+          InputAdornmentProps={{ position: "start" }}
+          onChange={date => handleDateChange(date)}
         />
-        <Popover content={ 'Choose your Good Faith Payment Date' } title="Choose date" trigger="hover">
-          <InfoCircleOutlined className='GoodFaithPayment-date-container-info'/>
-        </Popover>
-      </div>
-      <div className='GoodFaithPayment-date-amount'>
-        <p className='GoodFaithPayment-date-amount-payment'>Your chosen payment amount</p>
-        <p className='GoodFaithPayment-date-amount-price'>507.00</p>
-      </div>
-    </div>
-    <p>Would you like to make your payment in one installment each month or split it up between two payments?</p>
-    <div className='GoodFaithPayment-payment-frequency'>
-      <div className='GoodFaithPayment-payment-frequency-container'>
-        <Select
-          className='GoodFaithPayment-payment-frequency-container-select'
-          defaultValue="payment"
-          suffixIcon={ <img src={ selectIcon } alt='icon'/> }
-        >
-          <Option value="installment">One installment</Option>
-          <Option value="payment">Payment Frequency</Option>
-          <Option value="payments">Two payments</Option>
-        </Select>
-
-        <Popover content={ 'Choose your payment frequency' } title="Choose payment frequency" trigger="hover">
-          <InfoCircleOutlined className='GoodFaithPayment-payment-frequency-container-select-info'/>
-        </Popover>
-      </div>
-      <div className='GoodFaithPayment-payment-frequency-amount'>
-        <p className='GoodFaithPayment-payment-frequency-amount-payment'>Your chosen payment amount</p>
-        <p className='GoodFaithPayment-payment-frequency-amount-price'>507.00</p>
-      </div>
-
-    </div>
-    <p>What day(s) of the month would you like to pay?</p>
-    <div className='GoodFaithPayment-pay-month'>
-      <div className='GoodFaithPayment-pay-month-container'>
-        <Select
-          className='GoodFaithPayment-pay-month-container-select'
-          defaultValue="payment"
-          suffixIcon={ <img src={ selectIcon } alt='icon'/> }
-        >
-          <Option value="installment">One installment</Option>
-          <Option value="payment">Payment Frequency</Option>
-          <Option value="payments">Two payments</Option>
-        </Select>
-
-        <Popover content={ 'Choose your payment frequency' } title="Choose payment frequency" trigger="hover">
-          <InfoCircleOutlined className='GoodFaithPayment-pay-month-container-select-info'/>
-        </Popover>
-      </div>
-      <div className='GoodFaithPayment-pay-month-container'>
-        <Select
-          className='GoodFaithPayment-pay-month-container-select'
-          defaultValue="payment"
-          suffixIcon={ <img src={ selectIcon } alt='icon'/> }
-        >
-          <Option value="installment">One installment</Option>
-          <Option value="payment">Payment Frequency</Option>
-          <Option value="payments">Two payments</Option>
-        </Select>
-
-        <Popover content={ 'Choose your payment frequency' } title="Choose payment frequency" trigger="hover">
-          <InfoCircleOutlined className='GoodFaithPayment-pay-month-container-select-info'/>
-        </Popover>
-      </div>
-    </div>
-    <div className='GoodFaithPayment-buttons'>
-      <Button size='middle' type='primary'>Back</Button>
-      <Button size='large' type='primary'>Next</Button>
-    </div>
-  </div>
+        <CustomPopover text={'Choose your payment date'}/>
+      </Box>
+      <Box className='GoodFaithPayment-date-amount'>
+        <Box component="p" color='textPrimary' className='GoodFaithPayment-date-amount-payment'>Your chosen payment amount</Box>
+        <Box component="p" color='textPrimary' className='GoodFaithPayment-date-amount-price'>507.00</Box>
+      </Box>
+    </Box>
+    <Box component="p" color='textPrimary'>Would you like to make your payment in one installment each month or split it up between two payments?</Box>
+    <Box className='GoodFaithPayment-payment-frequency'>
+      <Box className='GoodFaithPayment-payment-frequency-container'>
+        <CustomSelect />
+        <CustomPopover text={'Choose your payment frequency'}/>
+      </Box>
+      <Box className='GoodFaithPayment-payment-frequency-amount'>
+        <Box component="p" color='textPrimary' className='GoodFaithPayment-payment-frequency-amount-payment'>Your chosen payment amount</Box>
+        <Box component="p" color='textPrimary' className='GoodFaithPayment-payment-frequency-amount-price'>507.00</Box>
+      </Box>
+    </Box>
+    <Box component="p" color='textPrimary'>What day(s) of the month would you like to pay?</Box>
+    <Box className='GoodFaithPayment-pay-month'>
+      <Box className='GoodFaithPayment-pay-month-container'>
+        <CustomSelect />
+        <CustomPopover text={'Choose your payment frequency'}/>
+      </Box>
+      <Box className='GoodFaithPayment-pay-month-container'>
+        <CustomSelect />
+        <CustomPopover text={'Choose your month payment'}/>
+      </Box>
+    </Box>
+    <Box className='GoodFaithPayment-buttons'>
+      <Button color='primary' size='large' variant='contained'>Back</Button>
+      <Button color='primary' size='large' variant='contained'>Next</Button>
+    </Box>
+  </Box>
 }
 
 export default GoodFaithPayment;

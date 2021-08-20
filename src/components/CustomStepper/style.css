@@ -1,0 +1,24 @@
+.CustomStepper {
+  display: flex;
+  justify-content: center;
+  width: 40% !important;
+  padding: 0!important;
+  box-sizing: border-box;
+}
+@media screen and (max-device-width: 1350px) {
+  .CustomStepper {
+    width: 55% !important;
+  }
+}
+@media screen and (max-device-width: 1100px) {
+  .CustomStepper {
+    width: 65% !important;
+  }
+}
+@media screen and (max-device-width: 450px) {
+  .CustomStepper {
+    width: 100% !important;
+    display: block!important;
+    padding: 5px 20px 15px!important;
+  }
+}

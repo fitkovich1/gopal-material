@@ -1,0 +1,7 @@
+.CustomSelect {
+  width: 210px;
+  height: 40px;
+}
+.CustomSelect .MuiSelect-outlined.MuiSelect-outlined {
+  background: none;
+}
