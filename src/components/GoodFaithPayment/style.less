@@ -1,0 +1,226 @@
+.GoodFaithPayment {
+  width: 70%;
+  height: max-content;
+  border: 2px solid #D3D3D3FF;
+  margin: 0 auto;
+  padding: 30px 50px;
+  background: rgba(194, 204, 212, 0.15);
+  @media screen and (max-width: 1100px){
+    width: 85%;
+  }
+  @media screen and (max-width: 860px){
+    width: 95%;
+    padding: 30px 30px;
+  }
+  @media screen and (max-width: 330px){
+    padding: 10px 10px;
+  }
+
+  > p {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+
+  &-date {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 80%;
+    margin-bottom: 30px;
+    @media screen and (max-width: 860px){
+      width: 90%;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+
+    &-container {
+      display: flex;
+      position: relative;
+      @media screen and (max-device-width: 450px){
+        margin-bottom: 15px;
+      }
+
+      &-calendar {
+        font-size: 2rem;
+        margin-right: 10px;
+      }
+
+      &-info {
+        position: absolute;
+        top: -10px;
+        right: -15px;
+        cursor: pointer;
+      }
+    }
+
+
+    &-picker {
+      position: relative;
+      width: 210px;
+
+      &:before {
+        content: 'Within the next 5 - 45 days';
+        position: absolute;
+        width: max-content;
+        top: -25px;
+        left: 0;
+        font-size: 1rem;
+        font-weight: 500;
+        color: #293845;
+      }
+
+      .ant-picker-input {
+        .ant-picker-suffix {
+          display: none;
+        }
+      }
+
+    }
+
+    &-amount {
+      display: flex;
+      flex-direction: column;
+
+      &-payment, &-price {
+        margin: 0;
+        font-weight: 500;
+        line-height: 1.4;
+      }
+
+      &-payment {
+        font-size: 1rem;
+      }
+
+      &-price {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  &-payment-frequency {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin-bottom: 30px;
+    @media screen and (max-width: 860px){
+      width: 90%;
+      flex-wrap: wrap;
+    }
+
+
+    &-container {
+      position: relative;
+      @media screen and (max-device-width: 450px){
+        margin: 15px 0;
+      }
+
+      &-select {
+
+        width: 210px;
+
+        > span {
+          margin-top: 0;
+          right: 10px;
+          width: 12px;
+          height: 20px;
+          transform: translateY(-50%);
+
+          > img {
+            width: 18px;
+            height: 20px;
+          }
+        }
+
+        &-info {
+          position: absolute;
+          top: -10px;
+          right: -15px;
+          cursor: pointer;
+        }
+      }
+    }
+
+    &-amount {
+      display: flex;
+      flex-direction: column;
+
+      &-payment, &-price {
+        margin: 0;
+        font-weight: 500;
+        line-height: 1.4;
+      }
+
+      &-payment {
+        font-size: 1rem;
+      }
+
+      &-price {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  &-pay-month {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin-bottom: 30px;
+    @media screen and (max-width: 860px){
+      width: 90%;
+      flex-wrap: wrap;
+    }
+
+
+    &-container {
+      position: relative;
+      margin-top: 10px;
+      @media screen and (max-device-width: 450px){
+        margin-top: 20px;
+      }
+
+      &-select {
+        width: 210px;
+
+        > span {
+          margin-top: 0;
+          right: 10px;
+          width: 12px;
+          height: 20px;
+          transform: translateY(-50%);
+
+          > img {
+            width: 18px;
+            height: 20px;
+          }
+        }
+
+        &-info {
+          position: absolute;
+          top: -10px;
+          right: -15px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  &-buttons{
+    display: flex;
+
+      > button{
+        background: #1AAE9F;
+        color: #ffffff;
+        margin-right: 20px;
+        border-radius: 5px;
+        border: none;
+        display: flex;
+
+        &:hover{
+          background: #1AAE9F;
+          color: #ffffff;
+        }
+      }
+  }
+}
