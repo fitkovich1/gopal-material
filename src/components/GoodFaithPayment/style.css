@@ -27,6 +27,12 @@
   font-size: 1.1rem;
   font-weight: 500;
   margin-bottom: 20px;
+  width: 48%;
+}
+@media screen and (max-device-width: 450px) {
+  .GoodFaithPayment > p {
+    width: auto;
+  }
 }
 .GoodFaithPayment-date {
   display: flex;
@@ -126,10 +132,11 @@
 }
 .GoodFaithPayment-payment-frequency-container {
   position: relative;
+  margin-left: 48px;
 }
 @media screen and (max-device-width: 450px) {
   .GoodFaithPayment-payment-frequency-container {
-    margin: 15px 0;
+    margin: 0 0 15px 48px;
   }
 }
 .GoodFaithPayment-payment-frequency-container-select-info {
@@ -174,14 +181,17 @@
 .GoodFaithPayment-pay-month-container {
   position: relative;
   margin-top: 10px;
+  margin-left: 48px;
+  margin-right: 30px;
 }
 @media screen and (max-device-width: 450px) {
   .GoodFaithPayment-pay-month-container {
-    margin-top: 20px;
+    margin-top: 15px;
   }
 }
 .GoodFaithPayment-buttons {
   display: flex;
+  margin-left: 48px;
 }
 .GoodFaithPayment-buttons > button {
   color: #ffffff;
